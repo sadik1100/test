@@ -6,6 +6,9 @@ bot.on('message', (msg) => {
     }
 });
 
+
+////////////////////////////////////Spotify///////////////////////////////////
+const { search } = require('@nechlophomeriaa/spotifydl');
 const FormData = require('form-data');
 
 let userState = {};
