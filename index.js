@@ -49,8 +49,8 @@ const updateMessage = async (chatId, messageId, searchResults, currentPage, isSe
 };
 
 // Start command
-bot.onText(/\/start/, async (msg) => {
-  const welcomeMessage = '<b>Hello! I am Spotify Downloader Bot 🎶</b>\n\nI can download any song from Spotify and send it to you as an audio file.\n\nJust send me the Spotify song URL like this /download SONG_URL or use the /search command to search for a song and directly download it.\n⁉️ For more information use the /help command.\n\n🗑️ <i>Feel free to delete message to keep our chat clean and focused on music!</i>\n\n<b>🎵 Developed with ❤️ by </b><a href="tg://user?id=5429844896">Abdul Kioum</a>';
+bot.onText(/\/spotify/, async (msg) => {
+  const welcomeMessage = '<b>Hello! I am Spotify Downloader Bot 🎶</b>\n\nI can download any song from Spotify and send it to you as an audio file.\n\nJust send me the Spotify song URL like this /spotify download SONG_URL or use the /spotify search command to search for a song and directly download it.\n⁉️ For more information use the /spotify help command.\n\n🗑️ <i>Feel free to delete message to keep our chat clean and focused on music!</i>\n\n<b>🎵 Developed with ❤️ by </b><a href="tg://user?id=5429844896">Abdul Kioum</a>';
   const gifUrl = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm9zeWpuNHNoOHViejMzcm5jZmcwZjVpeGFrdWlqbzlhYXFhd29vZiZlcD12MV9pbnRlcm5naWZfYnlfaWQmY3Q9Zw/EFGXDUBXcUd131C0CR/giphy.gif";
 
   try {
@@ -62,7 +62,7 @@ bot.onText(/\/start/, async (msg) => {
 });
 
 // Help command
-bot.onText(/\/help/, async (msg) => {
+bot.onText(/\/spotify help/, async (msg) => {
   const helpMessage = "<b>⁉️ How to use?</b>\n\n<b>🔍 Search and download</b>\nYou can directly search and download from spotify by using /search command and selecting your song.\n\n<i>Example:\n</i><pre>/search daku</pre>\n\n<b>📩 Directly download by song URL</b>\nYou can directly download from spotify by using /download command.\n\n<i>Example:</i>\n<pre>/download https://open.spotify.com/track/71XxylHoSigwo354LSy5p6?si=fa0b9772252b4ca0</pre>\n\n🗑️ <i>Feel free to delete messages to keep our chat clean and focused on music!</i>\n\n<b>🎧Happy lisenting...</b>";
 
   await bot.sendMessage(msg.chat.id, helpMessage, { parse_mode: 'HTML' });
