@@ -51,29 +51,25 @@ const updateMessage = async (chatId, messageId, searchResults, currentPage, isSe
   );
 };
 
+const welcomeMessage = '<b>Hello! I am Spotify Downloader Bot 🎶</b>\n\nI can download any song from Spotify and send it to you as an audio file.\n\nJust send me the Spotify song URL like this /spotifyd SONG_URL to directly download or use the /spotifys command to search for a song and directly download it.\n⁉️ For more information use the /spotifyh to help command.\n\n🗑️ <i>Feel free to delete message to keep our chat clean and focused on music!</i>\n\n<b>🎵 Developed with ❤️ by </b><a href="tg://user?id=5429844896">Abdul Kioum</a>';
 
+const helpMessage = "<b>⁉️ How to use?</b>\n\n<b>🔍 Search and download</b>\nYou can directly search and download from spotify by using /spotify command and selecting your song.\n\n<i>Example:\n</i><pre>/spotifys daku</pre>\n\n<b>📩 Directly download by song URL</b>\nYou can directly download from spotify by using /spotifyd command.\n\n<i>Example:</i>\n<pre>/spotifyd https://open.spotify.com/track/71XxylHoSigwo354LSy5p6?si=fa0b9772252b4ca0</pre>\n\n🗑️ <i>Feel free to delete messages to keep our chat clean and focused on music!</i>\n\n<b>🎧Happy listening...</b>";
 
+const gifUrl = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm9zeWpuNHNoOHViejMzcm5jZmcwZjVpeGFrdWlqbzlhYXFhd29vZiZlcD12MV9pbnRlcm5naWZfYnlfaWQmY3Q9Zw/EFGXDUBXcUd131C0CR/giphy.gif";
 
 bot.onText(/\/spotify/, async (msg) => {
   const chatId = msg.chat.id;
-  const welcomeMessage = '<b>Hello! I am Spotify Downloader Bot 🎶</b>\n\nI can download any song from Spotify and send it to you as an audio file.\n\nJust send me the Spotify song URL like this /spotifyd SONG_URL to directly download or use the /spotifys command to search for a song and directly download it.\n⁉️ For more information use the /spotifyh to help command.\n\n🗑️ <i>Feel free to delete message to keep our chat clean and focused on music!</i>\n\n<b>🎵 Developed with ❤️ by </b><a href="tg://user?id=5429844896">Abdul Kioum</a>';
-
-  const helpMessage = "<b>⁉️ How to use?</b>\n\n<b>🔍 Search and download</b>\nYou can directly search and download from spotify by using /spotify command and selecting your song.\n\n<i>Example:\n</i><pre>/spotifys daku</pre>\n\n<b>📩 Directly download by song URL</b>\nYou can directly download from spotify by using /spotifyd command.\n\n<i>Example:</i>\n<pre>/spotifyd https://open.spotify.com/track/71XxylHoSigwo354LSy5p6?si=fa0b9772252b4ca0</pre>\n\n🗑️ <i>Feel free to delete messages to keep our chat clean and focused on music!</i>\n\n<b>🎧Happy lisenting...</b>";
-
   
-  const gifUrl = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm9zeWpuNHNoOHViejMzcm5jZmcwZjVpeGFrdWlqbzlhYXFhd29vZiZlcD12MV9pbnRlcm5naWZfYnlfaWQmY3Q9Zw/EFGXDUBXcUd131C0CR/giphy.gif";
-
   if (msg.text === '/spotify') {
     try {
       await bot.sendAnimation(chatId, gifUrl, { caption: welcomeMessage, parse_mode: 'HTML' });
     } catch (error) {
       console.error("Error sending welcome message:", error);
-      await bot.sendMessage(msg.chat.id, welcomeMessage, { parse_mode: 'HTML' });
-  } if (msg.text === '/spotifyh') {
-      await bot.sendMessage(msg.chat.id, helpMessage, { parse_mode: 'HTML' });
+      await bot.sendMessage(chatId, welcomeMessage, { parse_mode: 'HTML' });
+    }
+  } else if (msg.text === '/spotifyh') {
+    await bot.sendMessage(chatId, helpMessage, { parse_mode: 'HTML' });
   }
-});
-t bot.sendMessage(msg.chat.id, helpMessage, { parse_mode: 'HTML' });
 });
 
 // Search command
