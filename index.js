@@ -53,7 +53,7 @@ const updateMessage = async (chatId, messageId, searchResults, currentPage, isSe
 
 // Start command
 bot.onText(/\/spotify/, async (msg) => {
-  const welcomeMessage = '<b>Hello! I am Spotify Downloader Bot 🎶</b>\n\nI can download any song from Spotify and send it to you as an audio file.\n\nJust send me the Spotify song URL like this /spotifyd SONG_URL to directly download or use the /spotifys command to search for a song and directly download it.\n⁉️ For more information use the /spotify help command.\n\n🗑️ <i>Feel free to delete message to keep our chat clean and focused on music!</i>\n\n<b>🎵 Developed with ❤️ by </b><a href="tg://user?id=5429844896">Abdul Kioum</a>';
+  const welcomeMessage = '<b>Hello! I am Spotify Downloader Bot 🎶</b>\n\nI can download any song from Spotify and send it to you as an audio file.\n\nJust send me the Spotify song URL like this /spotifyd SONG_URL to directly download or use the /spotifys command to search for a song and directly download it.\n⁉️ For more information use the /spotifyh to help command.\n\n🗑️ <i>Feel free to delete message to keep our chat clean and focused on music!</i>\n\n<b>🎵 Developed with ❤️ by </b><a href="tg://user?id=5429844896">Abdul Kioum</a>';
   const gifUrl = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm9zeWpuNHNoOHViejMzcm5jZmcwZjVpeGFrdWlqbzlhYXFhd29vZiZlcD12MV9pbnRlcm5naWZfYnlfaWQmY3Q9Zw/EFGXDUBXcUd131C0CR/giphy.gif";
 
   try {
