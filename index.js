@@ -65,14 +65,14 @@ bot.onText(/\/spotify/, async (msg) => {
 });
 
 // Help command
-bot.onText(/\/spotify help/, async (msg) => {
-  const helpMessage = "<b>⁉️ How to use?</b>\n\n<b>🔍 Search and download</b>\nYou can directly search and download from spotify by using /search command and selecting your song.\n\n<i>Example:\n</i><pre>/search daku</pre>\n\n<b>📩 Directly download by song URL</b>\nYou can directly download from spotify by using /download command.\n\n<i>Example:</i>\n<pre>/download https://open.spotify.com/track/71XxylHoSigwo354LSy5p6?si=fa0b9772252b4ca0</pre>\n\n🗑️ <i>Feel free to delete messages to keep our chat clean and focused on music!</i>\n\n<b>🎧Happy lisenting...</b>";
+bot.onText(/\/spotifyh/, async (msg) => {
+  const helpMessage = "<b>⁉️ How to use?</b>\n\n<b>🔍 Search and download</b>\nYou can directly search and download from spotify by using /spotify command and selecting your song.\n\n<i>Example:\n</i><pre>/spotifys daku</pre>\n\n<b>📩 Directly download by song URL</b>\nYou can directly download from spotify by using /spotifyd command.\n\n<i>Example:</i>\n<pre>/spotifyd https://open.spotify.com/track/71XxylHoSigwo354LSy5p6?si=fa0b9772252b4ca0</pre>\n\n🗑️ <i>Feel free to delete messages to keep our chat clean and focused on music!</i>\n\n<b>🎧Happy lisenting...</b>";
 
   await bot.sendMessage(msg.chat.id, helpMessage, { parse_mode: 'HTML' });
 });
 
 // Search command
-bot.onText(/\/search (.+)/, async (msg, match) => {
+bot.onText(/\/spotifys (.+)/, async (msg, match) => {
   const query = match[1];
 
   try {
@@ -190,7 +190,7 @@ bot.on('callback_query', async (callbackQuery) => {
 });
 
 // Download command
-bot.onText(/\/download (.+)/, async (msg, match) => {
+bot.onText(/\/spotifyd (.+)/, async (msg, match) => {
   const spotifyUrl = match[1].trim();
 
   if (!spotifyUrl.startsWith('https://open.spotify.com/track/')) {
